@@ -34,15 +34,7 @@ public class HumanFlocking : Steering
 			if (hit.gameObject.layer == obstacle)
 			{
 				var distance = hit.transform.position - transform.position;
-				var distanceMag = distance.magnitude;
-			
-				if (distanceMag < obstacleRadius)
-				{
-					isAvoiding = true;
-					AddForce(Avoidance(distance, obstacleRadius));
-				}
-				else
-					isAvoiding = false;
+				AddForce(Avoidance(distance));
 					
 			}
 		}

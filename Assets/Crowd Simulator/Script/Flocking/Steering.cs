@@ -132,13 +132,14 @@ public class Steering : MonoBehaviour, ISteerable
         return Flee(targetPosition);
     }
 
-    protected Vector3 Avoidance(Vector3 distance, float obstacleRadius)
+    protected Vector3 Avoidance(Vector3 distance)
     {
-        var adjustedDistance = distance.normalized;
-        var difference = obstacleRadius - distance.magnitude + 1;
-        adjustedDistance = adjustedDistance * difference;
-		return _velocity - adjustedDistance;
-    }
+//         var adjustedDistance = distance.normalized;
+//         var difference = obstacleRadius - distance.magnitude + 1;
+//         adjustedDistance = adjustedDistance * difference;
+// 		return _velocity - adjustedDistance;
+		return Flee(distance);
+	}
 
     //Reinicia las fuerzas
     protected void ResetForces()

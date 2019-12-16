@@ -42,7 +42,7 @@ public class HumanRTSFlocking : Steering
 				var distance = hit.transform.position - transform.position;
 				var distanceMag = distance.magnitude;
 				if (distanceMag < obstacleRadius) // chequeo por distancias de obstaculos
-					AddForce(Avoidance(distance, obstacleRadius));
+					AddForce(Avoidance(distance));
 			}
 			else
 			{
